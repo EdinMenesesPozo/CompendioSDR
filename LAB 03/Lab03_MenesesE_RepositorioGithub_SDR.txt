@@ -1,0 +1,12 @@
+LIBRERIA NECESARIA PARA DESARROLLO DEL LABORATORIO 3 - SDR
+
+
+LINK REPOSITORIO DE GITHUB MENESES EDIN:
+
+https://github.com/EdinMenesesPozo/Lab03_SDR_Libreria.git
+
+
+LINK REPOSITORIO DE GITHUB QUELAL CRISTIAN:
+
+https://github.com/CristianQuelal/Lab03_SDR.git
+

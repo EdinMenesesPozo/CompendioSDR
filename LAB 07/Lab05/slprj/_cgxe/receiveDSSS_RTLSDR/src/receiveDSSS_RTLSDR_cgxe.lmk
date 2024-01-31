@@ -1,0 +1,48 @@
+CC     = "C:\Program Files\MATLAB\R2023b\sys\lcc64\lcc64\bin\lcc64.exe"
+LD     = "C:\Program Files\MATLAB\R2023b\sys\lcc64\lcc64\bin\lcclnk64.exe"
+LIBCMD = "C:\Program Files\MATLAB\R2023b\sys\lcc64\lcc64\bin\lcclib64.exe"
+CFLAGS = -w -dll -noregistrylookup  -c -Zp8 -DLCC_WIN64 -DMATLAB_MEX_FILE -nodeclspec  
+LDFLAGS = -s -dll -L"C:\Program Files\MATLAB\R2023b\sys\lcc64\lcc64\lib64" -entry LibMain -map sfun.map 
+LIBFLAGS = 
+
+OBJECTS = \
+	"c_mexapi_version.obj"\
+	"lccstub.obj"\
+	"receiveDSSS_RTLSDR_cgxe.obj"\
+	"m_5AxwALAOwAiCt73xCkp15B.obj"\
+	"receiveDSSS_RTLSDR_cgxe_registry.obj"\
+	"signLib.obj"\
+	"receiveDSSS_RTLSDR_cgxe.def"\
+	"C:\Program Files\MATLAB\R2023b\extern\lib\win64\microsoft\libmx.lib"\
+	"C:\Program Files\MATLAB\R2023b\extern\lib\win64\microsoft\libmex.lib"\
+	"C:\Program Files\MATLAB\R2023b\extern\lib\win64\microsoft\libmat.lib"\
+	"C:\Program Files\MATLAB\R2023b\extern\lib\win64\microsoft\libfixedpoint.lib"\
+	"C:\Program Files\MATLAB\R2023b\extern\lib\win64\microsoft\libut.lib"\
+	"C:\Program Files\MATLAB\R2023b\extern\lib\win64\microsoft\libmwmathutil.lib"\
+	"C:\Program Files\MATLAB\R2023b\extern\lib\win64\microsoft\libemlrt.lib"\
+	"C:\Program Files\MATLAB\R2023b\extern\lib\win64\microsoft\libmwcgxert.lib"\
+	"C:\Program Files\MATLAB\R2023b\extern\lib\win64\microsoft\libmwcgxeooprt.lib"\
+	"C:\Program Files\MATLAB\R2023b\extern\lib\win64\microsoft\libmwslexec_simbridge.lib"\
+	"C:\Program Files\MATLAB\R2023b\extern\lib\win64\microsoft\libmwslccrt.lib"\
+	"C:\Program Files\MATLAB\R2023b\extern\lib\win64\microsoft\libmwstringutil.lib"\
+	"C:\Program Files\MATLAB\R2023b\extern\lib\win64\microsoft\libcovrt.lib"\
+	"C:\Program Files\MATLAB\R2023b\extern\lib\win64\microsoft\libmwsl_sfcn_cov_bridge.lib"\
+	"C:\Program Files\MATLAB\R2023b\extern\lib\win64\microsoft\libmwdsp_halidesim.lib"\
+
+INCLUDE_PATH= -I"C:\Program Files\MATLAB\R2023b\extern\include"  -I"C:\Program Files\MATLAB\R2023b\simulink\include"  -I"C:\Program Files\MATLAB\R2023b\rtw\c\src"  -I"C:\Users\edin6\OneDrive\escritorio\lab07_sdr\Lab05\slprj\_cgxe\receivedsss_rtlsdr\src"  -I"C:\Users\edin6\OneDrive\escritorio\lab07_sdr\Lab05"  -I"C:\Users\edin6\OneDrive\Escritorio\LAB07_SDR\Lab05\slprj\_cprj"  -I"C:\Program Files\MATLAB\R2023b\sys\lcc64\lcc64\include64"  -I"C:\Users\edin6\OneDrive\Escritorio\LAB07_SDR\Lab05\slprj\_cgxe\receiveDSSS_RTLSDR\src"  -I"C:\Users\edin6\OneDrive\Escritorio\LAB07_SDR\Lab05" 
+ 
+
+receiveDSSS_RTLSDR_cgxe.mexw64 : $(MAKEFILE) $(OBJECTS)
+	$(LD) $(LDFLAGS) -o receiveDSSS_RTLSDR_cgxe.mexw64 @receiveDSSS_RTLSDR_cgxe.lmko
+c_mexapi_version.obj :	"C:\Program Files\MATLAB\R2023b\extern\version\c_mexapi_version.c"
+	$(CC) $(CFLAGS) $(INCLUDE_PATH) "C:\Program Files\MATLAB\R2023b\extern\version\c_mexapi_version.c"
+lccstub.obj :	"C:\Program Files\MATLAB\R2023b\sys\lcc64\lcc64\mex\lccstub.c"
+	$(CC) $(CFLAGS) $(INCLUDE_PATH) "C:\Program Files\MATLAB\R2023b\sys\lcc64\lcc64\mex\lccstub.c"
+receiveDSSS_RTLSDR_cgxe.obj :	"receiveDSSS_RTLSDR_cgxe.c"
+	$(CC) $(CFLAGS) $(INCLUDE_PATH) "receiveDSSS_RTLSDR_cgxe.c"
+m_5AxwALAOwAiCt73xCkp15B.obj :	"m_5AxwALAOwAiCt73xCkp15B.c"
+	$(CC) $(CFLAGS) $(INCLUDE_PATH) "m_5AxwALAOwAiCt73xCkp15B.c"
+receiveDSSS_RTLSDR_cgxe_registry.obj :	"receiveDSSS_RTLSDR_cgxe_registry.c"
+	$(CC) $(CFLAGS) $(INCLUDE_PATH) "receiveDSSS_RTLSDR_cgxe_registry.c"
+signLib.obj :	"C:\Users\edin6\OneDrive\Escritorio\LAB07_SDR\Lab05\slprj\_cgxe\receiveDSSS_RTLSDR\src\signLib.c"
+	$(CC) $(CFLAGS) $(INCLUDE_PATH) "C:\Users\edin6\OneDrive\Escritorio\LAB07_SDR\Lab05\slprj\_cgxe\receiveDSSS_RTLSDR\src\signLib.c"
